@@ -54,10 +54,12 @@ h1, h2, h3, h4 {
 #container2 {
     position: absolute;
     margin-top: 480px;
-    margin-right: 1000px;
-     background-color: aliceblue;
+    margin-right: 1104px;
+    width: 345px;
+    background-color: aliceblue;
     padding-top: 4px;
     padding-right: 4px;
     padding-left: 4px;
     border:rgb(95, 102, 232) solid 1px;
+    color: rgb(95, 102, 232);
 }
