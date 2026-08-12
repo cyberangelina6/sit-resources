@@ -50,3 +50,14 @@ h1, h2, h3, h4 {
     background-image: url('imggif/0245eb994dc7403335ba3c5980052064.jpg');
     
 }
+
+#container2 {
+    position: absolute;
+    margin-top: 480px;
+    margin-right: 1000px;
+     background-color: aliceblue;
+    padding-top: 4px;
+    padding-right: 4px;
+    padding-left: 4px;
+    border:rgb(95, 102, 232) solid 1px;
+}
