@@ -33,8 +33,27 @@ h1, h2, h3, h4 {
     font-style: italic;
 }
 
+#img {
+    background-color: aliceblue;
+    padding-top: 4px;
+    padding-right: 4px;
+    padding-left: 4px;
+    border:rgb(95, 102, 232) solid 1px;
+}
+
 #img1 {
     background-color: aliceblue;
+    padding-top: 4px;
+    padding-right: 4px;
+    padding-left: 4px;
+    border:rgb(95, 102, 232) solid 1px;
+}
+
+#text {
+    background-color: aliceblue;
+    color: rgb(95, 102, 232);
+    width: 250px;
+    height: 140px;
     padding-top: 4px;
     padding-right: 4px;
     padding-left: 4px;
