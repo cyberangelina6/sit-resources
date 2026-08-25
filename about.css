@@ -87,3 +87,10 @@ h1, h2, h3, h4 {
     border-image-source: url(imggif/pwia.gif);
 
 }
+
+#bowDeco {
+    position: absolute;
+    margin-top: 2.3%;
+    margin-left: 45%;
+
+}
