@@ -12,7 +12,7 @@ body {
     align-items: flex-start;
     justify-content: center;
     font-family: "Google Sans Code", monospace;
-    overflow: hidden;
+    overflow: auto;
 }
 
 #top {
@@ -72,4 +72,18 @@ h1, h2, h3, h4 {
     padding-left: 4px;
     border:rgb(95, 102, 232) solid 1px;
     color: rgb(95, 102, 232);
+}
+
+#maincontainer {
+    background-image: url(imggif/tumblr_f3d4f9100ec5dd1070048e2e1e86c190_554afeed_75.jpg);
+    margin-left: 7%;
+    margin-top: 4.3%;
+    width: 800px;
+    height: 1000px;
+    border-image-slice: 20;
+    border-image-outset: 0;
+    border-image-repeat: repeat;
+    border-image-width: 15px;
+    border-image-source: url(imggif/pwia.gif);
+
 }
