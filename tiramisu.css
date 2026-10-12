@@ -1,0 +1,161 @@
+/* every image is a 144x144 pixel canvas, --px is the size of one of those pixels */
+:root {
+    --px: clamp(2px, 0.55vw, 4px);
+    /* the pop-up tiramisu is drawn a little smaller than everything else */
+    --cake-px: calc(var(--px) * 0.75);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: pink;
+    font-family: "argent-pixel-cf", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    color: #5a1f4a;
+    overflow: hidden;
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: calc(var(--px) * 6);
+}
+
+/* the stat sits just above the top left corner of the frame */
+.counter {
+    position: absolute;
+    left: 0;
+    bottom: calc(100% + var(--px) * 3);
+    margin: 0;
+    font-size: calc(var(--px) * 5);
+    white-space: nowrap;
+}
+
+.caption {
+    text-align: center;
+}
+
+.title {
+    margin: 0;
+    font-size: calc(var(--px) * 9);
+    font-weight: 400;
+}
+
+.subtitle {
+    margin: calc(var(--px) * 2) 0 0;
+    font-size: calc(var(--px) * 5);
+}
+
+img {
+    display: block;
+    image-rendering: pixelated;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* stage is cropped to the purple frame (78x65 pixels of the canvas) */
+.stage {
+    position: relative;
+    width: calc(var(--px) * 78);
+    height: calc(var(--px) * 65);
+}
+
+.frame {
+    position: absolute;
+    left: calc(var(--px) * -26);
+    top: calc(var(--px) * -29);
+    width: calc(var(--px) * 144);
+    height: calc(var(--px) * 144);
+    max-width: none;
+    pointer-events: none;
+}
+
+/* the inside of the frame, the character is clipped to it */
+.window {
+    position: absolute;
+    left: calc(var(--px) * 2);
+    top: calc(var(--px) * 2);
+    width: calc(var(--px) * 74);
+    height: calc(var(--px) * 59);
+    padding: 0;
+    border: none;
+    background: none;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.window:focus-visible {
+    outline: calc(var(--px) * 1) solid #fff;
+}
+
+.character {
+    position: absolute;
+    left: calc(var(--px) * -17);
+    top: calc(var(--px) * -19);
+    width: calc(var(--px) * 144);
+    height: calc(var(--px) * 144);
+    max-width: none;
+    pointer-events: none;
+}
+
+/* the tiramisu and "+1" that pop up to the right of the frame */
+.plus-one {
+    position: absolute;
+    left: calc(100% + var(--px) * 6);
+    top: 50%;
+    display: flex;
+    align-items: center;
+    gap: calc(var(--px) * 3);
+    font-size: calc(var(--px) * 9);
+    white-space: nowrap;
+    pointer-events: none;
+    animation: tiramisu-rise 1s ease-out forwards;
+}
+
+.plus-one-crop {
+    position: relative;
+    width: calc(var(--cake-px) * 21);
+    height: calc(var(--cake-px) * 18);
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.plus-one-crop img {
+    position: absolute;
+    left: calc(var(--cake-px) * -50);
+    top: calc(var(--cake-px) * -52);
+    width: calc(var(--cake-px) * 144);
+    height: calc(var(--cake-px) * 144);
+    max-width: none;
+}
+
+@keyframes tiramisu-rise {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+    25% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(calc(var(--px) * -30));
+    }
+}
