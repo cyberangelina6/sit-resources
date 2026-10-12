@@ -1,3 +1,12 @@
+/* the font file lives in the font folder so it also loads on neocities */
+@font-face {
+    font-family: "Jacquard 24";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("font/jacquard-24.woff2") format("woff2");
+}
+
 /* every image is a 144x144 pixel canvas, --px is the size of one of those pixels */
 :root {
     --px: clamp(2px, 0.55vw, 4px);
@@ -20,9 +29,8 @@ body {
     justify-content: center;
     align-items: center;
     background-color: pink;
-    font-family: "argent-pixel-cf", sans-serif;
+    font-family: "Jacquard 24", sans-serif;
     font-weight: 400;
-    font-style: italic;
     color: #5a1f4a;
     overflow: hidden;
 }
