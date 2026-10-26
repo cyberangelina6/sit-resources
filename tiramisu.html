@@ -20,6 +20,16 @@
             <h1 class="title">sara's infinite tiramisu clicker!</h1>
             <p class="subtitle">10/12 happy birthday &lt;3</p>
         </div>
+
+        <section class="leaderboard" aria-labelledby="leaderboard-title">
+            <h2 class="leaderboard-title" id="leaderboard-title">leaderboard</h2>
+            <form class="save-score" id="save-form">
+                <input class="player-name" id="player-name" type="text" maxlength="20" placeholder="your name" autocomplete="nickname" aria-label="your name" required>
+                <button class="save-button" id="save-button" type="submit">save score</button>
+            </form>
+            <p class="leaderboard-status" id="leaderboard-status" aria-live="polite"></p>
+            <ol class="leaderboard-list" id="leaderboard-list"></ol>
+        </section>
     </main>
 
     <script src="tiramisu.js"></script>

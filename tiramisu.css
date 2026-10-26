@@ -18,24 +18,26 @@
     box-sizing: border-box;
 }
 
-html,
-body {
+html {
     height: 100%;
-    margin: 0;
 }
 
+/* the page scrolls if the leaderboard doesn't fit, .game's auto margin keeps it centred otherwise */
 body {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    min-height: 100%;
+    margin: 0;
+    padding: calc(var(--px) * 14) 16px;
     background-color: pink;
     font-family: "Jacquard 24", sans-serif;
     font-weight: 400;
     color: #5a1f4a;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .game {
+    margin: auto;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -53,6 +55,7 @@ body {
 }
 
 .caption {
+    max-width: 100%;
     text-align: center;
 }
 
@@ -65,6 +68,87 @@ body {
 .subtitle {
     margin: calc(var(--px) * 2) 0 0;
     font-size: calc(var(--px) * 5);
+}
+
+.leaderboard {
+    width: calc(var(--px) * 90);
+    max-width: 100%;
+    font-size: calc(var(--px) * 5);
+}
+
+.leaderboard-title {
+    margin: 0 0 calc(var(--px) * 3);
+    font-size: calc(var(--px) * 7);
+    font-weight: 400;
+    text-align: center;
+}
+
+.save-score {
+    display: flex;
+    gap: calc(var(--px) * 2);
+}
+
+.save-score[hidden] {
+    display: none;
+}
+
+.player-name,
+.save-button {
+    font: inherit;
+    color: inherit;
+    padding: calc(var(--px) * 1) calc(var(--px) * 2);
+    border: calc(var(--px) * 0.5) solid #5a1f4a;
+    border-radius: 0;
+}
+
+.player-name {
+    flex: 1;
+    min-width: 0;
+    background-color: #fff0f5;
+}
+
+.save-button {
+    background-color: #5a1f4a;
+    color: pink;
+    cursor: pointer;
+}
+
+.save-button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+.leaderboard-status {
+    min-height: 1.2em;
+    margin: calc(var(--px) * 2) 0;
+    text-align: center;
+}
+
+.leaderboard-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.leaderboard-list li {
+    display: flex;
+    gap: calc(var(--px) * 3);
+}
+
+.leaderboard-rank {
+    min-width: 1.5em;
+}
+
+/* the player's own name stands out */
+.leaderboard-list .is-you {
+    color: #c2185b;
+}
+
+.leaderboard-name {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 img {
